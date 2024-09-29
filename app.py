@@ -168,4 +168,4 @@ def get_loan_recommendation():
     return render_template('loan_form.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)
