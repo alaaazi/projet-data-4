@@ -4,9 +4,14 @@
         <div class="container px-5 py-5">
             <div class="text-center">
                 <h1 class="display-3 text-danger">Désolé, votre demande de prêt a été rejetée</h1>
+               
                 <p class="lead fw-normal text-muted mb-5">
                     Malheureusement, votre demande de prêt n'a pas pu être approuvée cette fois-ci. Cependant, nous comprenons que cela peut être décevant, et nous vous encourageons à explorer les alternatives disponibles pour améliorer votre éligibilité à l'avenir.
+                    <strong>Nous vous offrons des recommandations de produits de prêt adaptés à votre situation actuelle. Si vous êtes intéressé, cliquez ci-dessous pour les découvrir.</strong>
                 </p>
+                <a href="#loan-recommendation-form2" class="btn btn-primary rounded-pill py-3 px-4">Voir les produits de prêt recommandés</a>
+                                
+
 
                 <!-- Explanation Section -->
                 <section>
@@ -77,12 +82,40 @@
 
                     <!-- Button to return to home -->
                     <div class="mt-4">
-                        <a href="/" class="btn btn-primary rounded-pill py-3 px-4">Retour à l'Accueil</a>
+                        <a href="/#loan-recommendation-form" class="btn btn-primary rounded-pill py-3 px-4">Retour à l'Accueil</a>
                     </div>
                 </section>
+                
             </div>
         </div>
+<section id="loan-recommendation-form2" class="bg-light py-5">
+        <div class="container px-5">
+            <h2 class="display-4 lh-1 mb-4 text-center">Recommandation de Produits de Prêt</h2>
+            <p class="lead fw-normal text-muted mb-5 text-center">Remplissez vos informations pour obtenir des recommandations de produits de prêt adaptés à votre profil.</p>
 
+            <form method="POST" action="/get_loan_recommendation" class="text-center">
+                <div class="row mb-3">
+                    <label for="income" class="col-sm-4 col-form-label">Votre budget :</label>
+                    <div class="col-sm-8">
+                        <input type="number" class="form-control" id="income" name="income" placeholder="Entrez votre budget en euros" required>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="property_area" class="col-sm-4 col-form-label">Zone de Propriété :</label>
+                    <div class="col-sm-8">
+                        <select class="form-select" id="property_area" name="property_area" required>
+                            <option value="Urban">Urbain</option>
+                            <option value="Semiurban">Semi-urbain</option>
+                            <option value="Rural">Rural</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary rounded-pill">Obtenir des Recommandations</button>
+            </form>
+        </div>
+    </section>
          <!-- Feedback modal-->
          <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
