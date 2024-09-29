@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Loan Recommendations" />
+    <meta name="author" content="Votre Nom" />
+    <title>Loan Recommendations - Loan Products</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Google fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</head>
+<body id="page-top">
+<p>+6
+</p>
+<p>3</p>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
+        <div class="container px-5">
+            <a class="navbar-brand fw-bold" href="/">Prêt Immobilier</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="bi-list"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+                    <li class="nav-item"><a class="nav-link me-lg-3" href="#features">Pourquoi Nous ?</a></li>
+                    <li class="nav-item"><a class="nav-link me-lg-3" href="#download">Télécharger l'Application</a></li>
+                </ul>
+                <button class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" data-bs-toggle="modal" data-bs-target="#feedbackModal">
+                    <span class="d-flex align-items-center">
+                        <i class="bi-chat-text-fill me-2"></i>
+                        <span class="small">Contactez-Nous</span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <section class="py-5">
+        <div class="container px-5">
+            <h2 class="display-4 lh-1 mb-4 text-center">Loan Products Recommended for You</h2>
+            <div class="row">
+                {% if loan_products %}
+                    {% for product in loan_products %}
+                        <div class="col-md-4">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ product.product_name }}</h5>
+                                    <p class="card-text">
+                                        <strong>Interest Rate:</strong> {{ product.interest_rate }}% <br>
+                                        <strong>Loan Term:</strong> {{ product.loan_term_months }} months <br>
+                                        <strong>Minimum Income:</strong> €{{ product.min_income_requirement }} <br>
+                                        <strong>Maximum Income:</strong> €{{ product.max_income_limit }} <br>
+                                        <strong>Property Area:</strong> {{ product.property_area }} <br>
+                                        <strong>Eligibility Criteria:</strong> {{ product.eligibility_criteria }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="col-md-12">
+                        <div class="alert alert-warning" role="alert">
+                            No loan products found based on your criteria.
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Bootstrap core JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

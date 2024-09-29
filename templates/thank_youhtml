@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merci pour votre message</title>
+
+    <!-- Style intégré dans le fichier HTML -->
+    <style>
+        /* Général */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-top: 50px;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        /* Bouton de retour */
+        .back-home {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            margin-top: 30px;
+            display: inline-block;
+        }
+
+        .back-home:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            margin-top: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Merci pour votre message !</h1>
+    <p>Nous avons bien reçu votre demande. Un membre de notre équipe vous contactera sous peu.</p>
+    
+    <!-- Lien retour à l'accueil -->
+    <a href="/" class="back-home">Retour à la page d'accueil</a>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Banque de Prêts. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>
